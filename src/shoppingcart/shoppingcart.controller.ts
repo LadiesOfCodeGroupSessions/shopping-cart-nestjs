@@ -1,12 +1,12 @@
 import { Controller, Get } from '@nestjs/common';
 import { ShoppingCartService } from './shoppingcart.service';
 
-@Controller()
+@Controller('cart')
 export class ShoppingCartController {
   constructor(private readonly shoppingCartService: ShoppingCartService) {}
 
-  @Get()
-  getHello(): string {
-    return this.shoppingCartService.getHello();
+  @Get('items')
+  getItems(): string {
+    return this.shoppingCartService.getItems();
   }
 }

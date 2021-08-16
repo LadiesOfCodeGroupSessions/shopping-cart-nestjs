@@ -1,12 +1,3 @@
-// describe('GET /items', () => {
-//
-//   it('returns items', async () => {
-//     const result = await request.get('/items')
-//     expect(result.status).toEqual(200)
-//     expect(result.body.items[0].name).toEqual('apples')
-//   })
-// })
-
 import { Test, TestingModule } from '@nestjs/testing';
 import { ShoppingCartController } from './shoppingcart.controller';
 import { ShoppingCartService } from './shoppingcart.service';
@@ -21,12 +12,12 @@ describe('ShoppingCartController', () => {
     }).compile();
   });
 
-  describe('getHello', () => {
-    it('should return "Hello World!"', () => {
+  describe('getItems', () => {
+    it('should return "Hello Shopping Cart!"', () => {
       const shoppingCartController = app.get<ShoppingCartController>(
         ShoppingCartController,
       );
-      expect(shoppingCartController.getHello()).toBe('Hello World!');
+      expect(shoppingCartController.getItems()).toBe('Hello Shopping Cart!');
     });
   });
 });
