@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Put } from '@nestjs/common';
 import { ShoppingCartService } from './shoppingcart.service';
 
 @Controller('cart')
@@ -8,5 +8,10 @@ export class ShoppingCartController {
   @Get('items')
   getItems(): string {
     return this.shoppingCartService.getItems();
+  }
+
+  @Put()
+  addToCart(): string {
+    return this.shoppingCartService.addToCart();
   }
 }

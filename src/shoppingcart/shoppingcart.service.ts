@@ -5,4 +5,8 @@ export class ShoppingCartService {
   getItems(): string {
     return 'Hello Shopping Cart!';
   }
+
+  addToCart(): string {
+    return 'Item Added!';
+  }
 }

@@ -24,15 +24,6 @@ describe('AppController (e2e)', () => {
   });
 });
 
-// describe('GET /items', () => {
-//
-//   it('returns items', async () => {
-//     const result = await request.get('/items')
-//     expect(result.status).toEqual(200)
-//     expect(result.body.items[0].name).toEqual('apples')
-//   })
-// })
-
 describe('ShoppingCartController (e2e', () => {
   let app: INestApplication;
 
@@ -51,4 +42,12 @@ describe('ShoppingCartController (e2e', () => {
       .expect(200)
       .expect('Hello Shopping Cart!');
   });
+
+  it('/cart (PUT', () => {
+    return request(app.getHttpServer())
+      .put('/cart')
+      .send({})
+      .expect(200)
+      .expect('Item Added!')
+  })
 });
