@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+import { SelectItemDto } from './select-item.dto';
 
 @Injectable()
 export class ShoppingCartService {
@@ -6,7 +7,17 @@ export class ShoppingCartService {
     return 'Hello Shopping Cart!';
   }
 
-  addToCart(): string {
-    return 'Item Added!';
+  addToCart(selection: SelectItemDto): any {
+    let cart: {
+      items: [
+        {
+          name: 'apple',
+          price: 1,
+          quantity: 1
+        }
+      ]
+    };
+
+    return cart;
   }
 }

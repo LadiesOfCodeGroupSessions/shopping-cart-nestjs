@@ -48,9 +48,9 @@ describe('ShoppingCartController (e2e', () => {
       .put('/cart')
       .send({ id: '123', name: 'apple', quantity: 1 });
 
-    console.log('result: ', result)
+      console.log('Result:', result.body);
 
     expect(result.status).toEqual(200);
-    expect(result.body.cart.items[0].quantity).toEqual(5);
+    expect(result.body.cart.items[0].quantity).toEqual(1);
   });
 });

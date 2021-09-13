@@ -1,4 +1,5 @@
-import { Controller, Get, Put } from '@nestjs/common';
+import { Body, Controller, Get, Put } from '@nestjs/common';
+import { SelectItemDto } from './select-item.dto';
 import { ShoppingCartService } from './shoppingcart.service';
 
 @Controller('cart')
@@ -11,7 +12,9 @@ export class ShoppingCartController {
   }
 
   @Put()
-  addToCart(): string {
-    return this.shoppingCartService.addToCart();
+  addToCart(@Body() SelectItemDto: SelectItemDto): any {
+    let foo = this.shoppingCartService.addToCart(SelectItemDto);
+    console.log('FOO ', foo)
+    return foo
   }
 }
