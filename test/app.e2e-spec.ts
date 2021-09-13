@@ -34,7 +34,7 @@ describe('ShoppingCartController (e2e', () => {
 
     app = moduleFixture.createNestApplication();
     await app.init();
-  })
+  });
 
   it('/cart/items (GET)', () => {
     return request(app.getHttpServer())
@@ -43,11 +43,14 @@ describe('ShoppingCartController (e2e', () => {
       .expect('Hello Shopping Cart!');
   });
 
-  it('/cart (PUT', () => {
-    return request(app.getHttpServer())
+  it('/cart (PUT)', async () => {
+    const result = await request(app.getHttpServer())
       .put('/cart')
-      .send({})
-      .expect(200)
-      .expect('Item Added!')
-  })
+      .send({ id: '123', name: 'apple', quantity: 1 });
+
+    console.log('result: ', result)
+
+    expect(result.status).toEqual(200);
+    expect(result.body.cart.items[0].quantity).toEqual(5);
+  });
 });
