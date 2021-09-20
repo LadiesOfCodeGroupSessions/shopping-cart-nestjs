@@ -8,14 +8,16 @@ export class ShoppingCartService {
   }
 
   addToCart(selection: SelectItemDto): any {
-    let cart: {
-      items: [
-        {
-          name: 'apple',
-          price: 1,
-          quantity: 1
-        }
-      ]
+    const cart = {
+      cart: {
+        items: [
+          {
+            name: 'apple',
+            price: 1,
+            quantity: 1,
+          },
+        ],
+      },
     };
 
     return cart;
