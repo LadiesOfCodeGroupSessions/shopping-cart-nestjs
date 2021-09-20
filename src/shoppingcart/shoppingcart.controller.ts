@@ -13,8 +13,8 @@ export class ShoppingCartController {
 
   @Put()
   addToCart(@Body() SelectItemDto: SelectItemDto): any {
-    let foo = this.shoppingCartService.addToCart(SelectItemDto);
-    console.log('FOO ', foo)
-    return foo
+    const foo = this.shoppingCartService.addToCart(SelectItemDto);
+    console.log('FOO ', foo);
+    return foo;
   }
 }
