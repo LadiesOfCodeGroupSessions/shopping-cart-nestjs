@@ -12,11 +12,12 @@ export class ShoppingCartService {
       cart: {
         items: [
           {
-            name: 'apple',
-            price: 1,
-            quantity: 1,
+            name: selection.name,
+            price: selection.price,
+            quantity: selection.quantity,
           },
         ],
+        total: selection.price,
       },
     };
 
