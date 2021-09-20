@@ -52,4 +52,18 @@ describe('ShoppingCartController (e2e', () => {
     expect(result.body.cart.items[0].quantity).toEqual(1);
     expect(result.body.cart.total).toEqual(3);
   });
+
+  it('/cart (PUT) 2', async () => {
+    await request(app.getHttpServer())
+      .put('/cart')
+      .send({ id: '123', name: 'apple', price: 3, quantity: 1 });
+
+    const result = await request(app.getHttpServer())
+      .put('/cart')
+      .send({ id: '123', name: 'apple', price: 3, quantity: 1 });
+
+    expect(result.status).toEqual(200);
+    expect(result.body.cart.items[0].quantity).toEqual(2);
+    expect(result.body.cart.total).toEqual(6);
+  });
 });
