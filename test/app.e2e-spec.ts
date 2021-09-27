@@ -20,7 +20,7 @@ describe('AppController (e2e)', () => {
     return request(app.getHttpServer())
       .get('/')
       .expect(200)
-      .expect('Hello World!');
+      .expect('Health Check!');
   });
 });
 
@@ -31,7 +31,6 @@ describe('ShoppingCartController (e2e', () => {
     const moduleFixture = await Test.createTestingModule({
       imports: [ShoppingCartModule],
     }).compile();
-
 
     app = moduleFixture.createNestApplication();
     await app.init();

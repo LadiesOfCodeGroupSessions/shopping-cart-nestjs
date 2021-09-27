@@ -12,14 +12,12 @@ export class ShoppingCartService {
   private cart = new Cart();
 
   addToCart(selection: SelectItemDto): Cart {
-
-    console.log('Cart: ', this.cart)
     const item = new Item(
       selection.name,
       selection.price,
       selection.quantity,
       selection.id,
-      );
+    );
 
     this.cart.addItem(item);
 

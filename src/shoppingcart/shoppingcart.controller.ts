@@ -14,6 +14,6 @@ export class ShoppingCartController {
   @Put()
   addToCart(@Body() SelectItemDto: SelectItemDto): any {
     const foo = this.shoppingCartService.addToCart(SelectItemDto);
-    return {cart : foo} ;
+    return { cart: foo };
   }
 }

@@ -3,7 +3,7 @@ import { Item } from './Item';
 export class Cart {
   private items: Item[] = [];
   private id: string;
-  private total: number = 0
+  private total: number = 0;
 
   public addItem(item: Item) {
     const filteredItems = this.items.filter((i) => i.name === item.name);
@@ -16,6 +16,6 @@ export class Cart {
       filteredItems[0].quantity += item.quantity;
       // console.log('QUANTITY', item.name, filteredItems[0].quantity);
     }
-    this.total+= item.quantity * item.price
+    this.total += item.quantity * item.price;
   }
 }
