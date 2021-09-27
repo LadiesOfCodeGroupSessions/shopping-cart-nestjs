@@ -11,5 +11,3 @@ export class Item {
     this.id = id;
   }
 }
-
-module.exports = Item;
