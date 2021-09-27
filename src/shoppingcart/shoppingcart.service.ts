@@ -9,22 +9,20 @@ export class ShoppingCartService {
     return 'Hello Shopping Cart!';
   }
 
-  private items: Item[] = [];
+  private cart = new Cart();
 
   addToCart(selection: SelectItemDto): Cart {
-    const cart = new Cart();
-    console.log('Cart: ', cart)
+
+    console.log('Cart: ', this.cart)
     const item = new Item(
       selection.name,
       selection.price,
       selection.quantity,
       selection.id,
       );
-      
-      console.log('Item: ', item)
 
-    cart.addItem(item);
+    this.cart.addItem(item);
 
-    return cart;
+    return this.cart;
   }
 }
