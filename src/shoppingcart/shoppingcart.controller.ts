@@ -1,4 +1,5 @@
 import { Body, Controller, Get, Put } from '@nestjs/common';
+import { Cart } from '../../src/domain/shoppingcart';
 import { SelectItemDto } from './select-item.dto';
 import { ShoppingCartService } from './shoppingcart.service';
 
@@ -6,9 +7,9 @@ import { ShoppingCartService } from './shoppingcart.service';
 export class ShoppingCartController {
   constructor(private readonly shoppingCartService: ShoppingCartService) {}
 
-  @Get('items')
-  getItems(): string {
-    return this.shoppingCartService.getItems();
+  @Get('cart')
+  getCart(): Cart {
+    return this.shoppingCartService.getCart();
   }
 
   @Put()

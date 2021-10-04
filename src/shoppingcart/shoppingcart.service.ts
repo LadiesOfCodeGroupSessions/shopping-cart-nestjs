@@ -1,12 +1,12 @@
 import { Injectable } from '@nestjs/common';
 import { SelectItemDto } from './select-item.dto';
-import { Cart } from './shoppingcart';
-import { Item } from './item';
+import { Cart } from '../domain/shoppingcart';
+import { Item } from '../domain/item';
 
 @Injectable()
 export class ShoppingCartService {
-  getItems(): string {
-    return 'Hello Shopping Cart!';
+  getCart(): Cart {
+    return this.cart;
   }
 
   private cart = new Cart();

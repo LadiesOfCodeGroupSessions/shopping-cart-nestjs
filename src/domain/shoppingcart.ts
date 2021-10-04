@@ -1,9 +1,9 @@
-import { Item } from './Item';
+import { Item } from './item';
 
 export class Cart {
   private items: Item[] = [];
   private id: string;
-  private total: number = 0;
+  private total: 0;
 
   public addItem(item: Item) {
     const filteredItems = this.items.filter((i) => i.name === item.name);
