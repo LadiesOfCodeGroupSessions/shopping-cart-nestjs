@@ -3,7 +3,9 @@ import { Item } from './item';
 export class Cart {
   private items: Item[] = [];
   private id: string;
-  private total: 0;
+  /*eslint-disable */
+  private total: number = 0;
+  /*eslint-enable */
 
   public addItem(item: Item) {
     const filteredItems = this.items.filter((i) => i.name === item.name);

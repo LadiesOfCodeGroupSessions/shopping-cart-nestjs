@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { Cart } from '../../src/domain/shoppingcart';
 import { ShoppingCartController } from './shoppingcart.controller';
 import { ShoppingCartService } from './shoppingcart.service';
+import { SelectItemDto } from './select-item.dto';
 
 describe('ShoppingCartController', () => {
   let app: TestingModule;
@@ -18,7 +18,22 @@ describe('ShoppingCartController', () => {
       const shoppingCartController = app.get<ShoppingCartController>(
         ShoppingCartController,
       );
-      expect(shoppingCartController.getCart() instanceof Cart).toBe(true);
+
+      const t = new SelectItemDto();
+      t.id = 1;
+      t.name = 'test';
+      t.price = 1;
+      t.quantity = 1;
+
+      shoppingCartController.addToCart(t);
+
+      const cart = shoppingCartController.getCart();
+
+      console.log('cart output: ', cart);
+
+      console.log('cart.items output: ', cart.items);
+      // expect(cart instanceof Cart).toBe(true);
+      expect(cart.items.length).toBe(0);
     });
   });
 });

@@ -1,5 +1,5 @@
 import { Body, Controller, Get, Put } from '@nestjs/common';
-import { Cart } from '../../src/domain/shoppingcart';
+import { Cart } from './shoppingcart';
 import { SelectItemDto } from './select-item.dto';
 import { ShoppingCartService } from './shoppingcart.service';
 
@@ -7,9 +7,13 @@ import { ShoppingCartService } from './shoppingcart.service';
 export class ShoppingCartController {
   constructor(private readonly shoppingCartService: ShoppingCartService) {}
 
-  @Get('cart')
-  getCart(): Cart {
-    return this.shoppingCartService.getCart();
+  @Get()
+  getCart(): any {
+    const cart = this.shoppingCartService.getCart();
+
+    console.log('in the controller: ', cart);
+
+    return { cart: cart };
   }
 
   @Put()
