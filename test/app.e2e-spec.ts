@@ -69,3 +69,6 @@ describe('ShoppingCartController (e2e)', () => {
     expect(result.body.cart.total).toEqual(6);
   });
 });
+
+//These tests require th cart key to be manually added to the response object from the controller
+// Why is this? How to return key in response?

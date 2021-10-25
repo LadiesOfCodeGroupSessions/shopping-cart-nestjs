@@ -4,7 +4,7 @@ export class Cart {
   public items: Item[] = [];
   private id: string;
   /*eslint-disable */
-  private total: number = 0;
+  public total: number = 0;
   /*eslint-enable */
 
   public addItem(item: Item) {

@@ -25,15 +25,10 @@ describe('ShoppingCartController', () => {
       t.price = 1;
       t.quantity = 1;
 
-      shoppingCartController.addToCart(t);
+      const cart = shoppingCartController.addToCart(t);
 
-      const cart = shoppingCartController.getCart();
-
-      console.log('TEST cart output: ', cart);
-
-      console.log('TEST cart.items output: ', cart.items);
-      // expect(cart instanceof Cart).toBe(true);
-      expect(cart.items[0].length).toBe(0);
+      expect(cart.total).toBe(1);
+      expect(cart.items.length).toBe(1);
     });
   });
 });

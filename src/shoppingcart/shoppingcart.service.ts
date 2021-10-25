@@ -18,12 +18,7 @@ export class ShoppingCartService {
       selection.quantity,
       selection.id,
     );
-
-    console.log('Service: item ', item);
-    console.log('Service: cart ', this.cart);
     this.cart.addItem(item);
-
-    console.log('Service after item added: ', this.cart.items)
     return this.cart;
   }
 }
