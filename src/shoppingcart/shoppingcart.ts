@@ -1,7 +1,7 @@
 import { Item } from './item';
 
 export class Cart {
-  private items: Item[] = [];
+  public items: Item[] = [];
   private id: string;
   /*eslint-disable */
   private total: number = 0;

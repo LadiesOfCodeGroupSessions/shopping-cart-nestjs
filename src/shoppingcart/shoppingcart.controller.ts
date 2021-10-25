@@ -18,6 +18,8 @@ export class ShoppingCartController {
 
   @Put()
   addToCart(@Body() SelectItemDto: SelectItemDto): any {
+    console.log('PUT select item DTO: ', SelectItemDto);
+
     const foo = this.shoppingCartService.addToCart(SelectItemDto);
     return { cart: foo };
   }

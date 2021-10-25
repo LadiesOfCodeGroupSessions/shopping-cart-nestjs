@@ -29,11 +29,11 @@ describe('ShoppingCartController', () => {
 
       const cart = shoppingCartController.getCart();
 
-      console.log('cart output: ', cart);
+      console.log('TEST cart output: ', cart);
 
-      console.log('cart.items output: ', cart.items);
+      console.log('TEST cart.items output: ', cart.items);
       // expect(cart instanceof Cart).toBe(true);
-      expect(cart.items.length).toBe(0);
+      expect(cart.items[0].length).toBe(0);
     });
   });
 });
