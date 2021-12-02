@@ -2,6 +2,8 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { ShoppingCartController } from './shoppingcart.controller';
 import { ShoppingCartService } from './shoppingcart.service';
 import { SelectItemDto } from './select-item.dto';
+import { Cart } from './shoppingcart';
+import { Item } from './item';
 
 describe('ShoppingCartController', () => {
   let app: TestingModule;
@@ -25,10 +27,31 @@ describe('ShoppingCartController', () => {
       t.price = 1;
       t.quantity = 1;
 
+      const result = {
+        cart: {
+          items: [[Item]],
+          total: 1,
+        },
+      };
+
+      // FIX THIS OBJECT
+      //   cart: Cart {
+      //   items: Array [
+      //       Item {
+      //         id: 1,
+      //         name: 'test',
+      //         price: 1,
+      //         quantity: 1,
+      //       },
+      //   ],
+      //   total: 1,
+      // }
+
       const cart = shoppingCartController.addToCart(t);
 
-      expect(cart.total).toBe(1);
-      expect(cart.items.length).toBe(1);
+      // expect(shoppingCartController.addToCart).toHaveBeenCalled();
+      expect(cart).toEqual(result);
+      // expect(cart.items.length).toBe(1);
     });
   });
 });
