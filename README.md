@@ -1,7 +1,9 @@
 ## To do:
-- controller spec tests is not working yet -> we need to fix the cart object
-- this might be helpful: https://github.com/nestjs/nest/issues/1209
 - Standardise linter
+- create some more realistic examples and see how the API works for them.
+- add payment
+
+
 ## Description
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
