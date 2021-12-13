@@ -36,12 +36,7 @@ describe('ShoppingCartController', () => {
 
       const cart = shoppingCartController.addToCart(t);
 
-      // console.log(cart.items[0] as Item);
-      // const user: User = JSON.parse(json)
-
-      // expect(shoppingCartController.addToCart).toHaveBeenCalled();
       expect(cart).toEqual(expected_result);
-      // expect(cart.items[0].name).toBe('test');
     });
   });
 });

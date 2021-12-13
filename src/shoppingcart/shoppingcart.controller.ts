@@ -1,7 +1,6 @@
 import { Body, Controller, Get, Put } from '@nestjs/common';
 import { SelectItemDto } from './select-item.dto';
 import { ShoppingCartService } from './shoppingcart.service';
-import { Cart } from './shoppingcart';
 
 @Controller('cart')
 export class ShoppingCartController {
