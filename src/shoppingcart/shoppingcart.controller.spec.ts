@@ -27,31 +27,21 @@ describe('ShoppingCartController', () => {
       t.price = 1;
       t.quantity = 1;
 
-      const result = {
-        cart: {
-          items: [[Item]],
-          total: 1,
-        },
-      };
+      const result_cart = new Cart();
+      const item = new Item('test', 1, 1, 1);
+      result_cart.items.push(item);
+      result_cart.total = 1;
 
-      // FIX THIS OBJECT
-      //   cart: Cart {
-      //   items: Array [
-      //       Item {
-      //         id: 1,
-      //         name: 'test',
-      //         price: 1,
-      //         quantity: 1,
-      //       },
-      //   ],
-      //   total: 1,
-      // }
+      const expected_result = { cart: result_cart };
 
       const cart = shoppingCartController.addToCart(t);
 
+      // console.log(cart.items[0] as Item);
+      // const user: User = JSON.parse(json)
+
       // expect(shoppingCartController.addToCart).toHaveBeenCalled();
-      expect(cart).toEqual(result);
-      // expect(cart.items.length).toBe(1);
+      expect(cart).toEqual(expected_result);
+      // expect(cart.items[0].name).toBe('test');
     });
   });
 });
